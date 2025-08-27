@@ -1,0 +1,48 @@
+#!/usr/bin/env python
+
+Import("env")
+Import("env_modules")
+
+env_palimpsest = env_modules.Clone()
+
+# Add Palimpsest-specific defines
+env_palimpsest.Append(CPPDEFINES=["PALIMPSEST_ENABLED"])
+
+# Module source files
+module_obj = []
+
+# Core module files
+env_palimpsest.add_source_files(module_obj, "*.cpp")
+
+# Narrative system
+env_palimpsest.add_source_files(module_obj, "narrative/*.cpp")
+env_palimpsest.add_source_files(module_obj, "narrative/dialogue_system/*.cpp")
+env_palimpsest.add_source_files(module_obj, "narrative/quest_system/*.cpp")
+env_palimpsest.add_source_files(module_obj, "narrative/skill_check_system/*.cpp")
+
+# Consciousness mechanics
+env_palimpsest.add_source_files(module_obj, "consciousness/*.cpp")
+env_palimpsest.add_source_files(module_obj, "consciousness/reality_distortion/*.cpp")
+env_palimpsest.add_source_files(module_obj, "consciousness/memory_system/*.cpp")
+env_palimpsest.add_source_files(module_obj, "consciousness/bureaucracy_anchoring/*.cpp")
+
+# Procedural generation
+env_palimpsest.add_source_files(module_obj, "procgen/*.cpp")
+env_palimpsest.add_source_files(module_obj, "procgen/wfc/*.cpp")
+env_palimpsest.add_source_files(module_obj, "procgen/building_generator/*.cpp")
+env_palimpsest.add_source_files(module_obj, "procgen/texture_generation/*.cpp")
+
+# RPG systems
+env_palimpsest.add_source_files(module_obj, "rpg_systems/*.cpp")
+env_palimpsest.add_source_files(module_obj, "rpg_systems/inventory/*.cpp")
+env_palimpsest.add_source_files(module_obj, "rpg_systems/character_stats/*.cpp")
+env_palimpsest.add_source_files(module_obj, "rpg_systems/thought_cabinet/*.cpp")
+
+# Renderer (no shaders/materials in SCsub, those are resource files)
+env_palimpsest.add_source_files(module_obj, "renderer/*.cpp")
+env_palimpsest.add_source_files(module_obj, "renderer/palette_enforcer/*.cpp")
+
+env.modules_sources += module_obj
+
+# Disabled code should not be compiled.
+module_obj = []

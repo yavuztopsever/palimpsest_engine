@@ -1,11 +1,11 @@
 {
-  "name": "Godot Engine Web Editor",
-  "short_name": "Godot",
-  "description": "Multi-platform 2D and 3D game engine with a feature-rich editor (Web edition)",
+  "name": "Palimpsest CRPG Engine Web Editor",
+  "short_name": "Palimpsest",
+  "description": "Consciousness-driven CRPG engine with specialized narrative tools (Web edition)",
   "lang": "en",
-  "start_url": "./godot.editor.html",
+  "start_url": "./palimpsest.editor.html",
   "display": "standalone",
-  "theme_color": "#202531",
+  "theme_color": "#1a1a1a",
   "icons": [
     {
       "src": "favicon.png",
@@ -13,5 +13,5 @@
       "type": "image/png"
     }
   ],
-  "background_color": "#333b4f"
+  "background_color": "#1a1a1a"
 }

@@ -1,78 +1,156 @@
-# Godot Engine
+# Palimpsest Engine
 
 <p align="center">
-  <a href="https://godotengine.org">
-    <img src="logo_outlined.svg" width="400" alt="Godot Engine logo">
+  <a href="https://palimpsest.org">
+    <img src="Palimpsest_Engine_logo.png" width="400" alt="Palimpsest Engine logo">
   </a>
 </p>
 
-## 2D and 3D cross-platform game engine
+## Consciousness-Driven CRPG Engine
 
-**[Godot Engine](https://godotengine.org) is a feature-packed, cross-platform
-game engine to create 2D and 3D games from a unified interface.** It provides a
-comprehensive set of [common tools](https://godotengine.org/features), so that
-users can focus on making games without having to reinvent the wheel. Games can
-be exported with one click to a number of platforms, including the major desktop
-platforms (Linux, macOS, Windows), mobile platforms (Android, iOS), as well as
-Web-based platforms and [consoles](https://docs.godotengine.org/en/latest/tutorials/platform/consoles.html).
+**[Palimpsest Engine](https://palimpsest.org) is a specialized CRPG development platform built for creating Disco Elysium-style narrative games.** Based on the proven Godot Engine foundation, Palimpsest adds consciousness mechanics, bureaucratic systems, and German Expressionist aesthetics to create immersive psychological RPGs where thoughts reshape reality.
 
-## Free, open source and community-driven
+Palimpsest transforms traditional game development by making **mental states physically affect the game world** through consciousness fields that distort architecture, alter NPC behavior, and influence procedural generation.
 
-Godot is completely free and open source under the very permissive [MIT license](https://godotengine.org/license).
-No strings attached, no royalties, nothing. The users' games are theirs, down
-to the last line of engine code. Godot's development is fully independent and
-community-driven, empowering users to help shape their engine to match their
-expectations. It is supported by the [Godot Foundation](https://godot.foundation/)
-not-for-profit.
+## Key Features
 
-Before being open sourced in [February 2014](https://github.com/godotengine/godot/commit/0b806ee0fc9097fa7bda7ac0109191c9c5e0a1ac),
-Godot had been developed by [Juan Linietsky](https://github.com/reduz) and
-[Ariel Manzur](https://github.com/punto-) (both still maintaining the project)
-for several years as an in-house engine, used to publish several work-for-hire
-titles.
+### 🧠 Consciousness Field System
+- **8 Consciousness Types**: Depression, Anxiety, Anger, Memory, Bureaucratic, Creative, Fear, Hope
+- **Reality Distortion**: Mental states physically reshape environments
+- **Thought Cabinet**: Internalized skills and memories that affect gameplay
+- **Cascade Effects**: Emotional states spread and influence other systems
 
-![Screenshot of a 3D scene in the Godot Engine editor](https://raw.githubusercontent.com/godotengine/godot-design/master/screenshots/editor_tps_demo_1920x1080.jpg)
+### 📖 Advanced Narrative Tools
+- **Yarn Spinner Integration**: Industry-standard dialogue system
+- **Skill Check Mechanics**: Probability-based interaction with consciousness modifiers
+- **Branching Narratives**: Complex story trees with state persistence
+- **Memory Fragments**: Scattered recollections triggered by environmental cues
 
-## Getting the engine
+### 📋 Bureaucratic Gameplay
+- **Form Systems**: Interactive paperwork with validation mechanics
+- **Stamp & Signature Tools**: Official document processing
+- **Red Tape Simulation**: Complexity scoring and bureaucratic obstacles
+- **Administrative Puzzles**: Logic-based form completion challenges
 
-### Binary downloads
+### 🌍 Procedural Generation
+- **Wave Function Collapse**: Consciousness-influenced level generation
+- **Brutalist Architecture**: Modernist concrete structures reflecting mental states
+- **Conditional Generation**: Building layouts adapt to player psychology
+- **Narrative Integration**: Procedural spaces support story beats
 
-Official binaries for the Godot editor and the export templates can be found
-[on the Godot website](https://godotengine.org/download).
+### 🎨 German Expressionist Renderer
+- **Monochrome Palette**: High-contrast black and white with selective color
+- **Selective Red Accents**: Blood-red highlights for critical elements
+- **Angular Aesthetics**: Sharp, modernist visual design
+- **Distortion Effects**: Reality warping based on consciousness intensity
 
-### Compiling from source
+### ⚙️ Specialized Editor
+- **5 Custom Workspaces**: Narrative, Consciousness, Bureaucracy, World Building, Testing
+- **CRPG-Focused Tools**: Node types filtered for narrative development
+- **German Expressionist Theme**: Editor matches game aesthetic
+- **Integrated Validation**: Built-in checks for CRPG best practices
 
-[See the official docs](https://docs.godotengine.org/en/latest/contributing/development/compiling)
-for compilation instructions for every supported platform.
+## Getting Started
 
-## Community and contributing
+### Prerequisites
+- **Python 3.6+** (for build system)
+- **SCons 4.0+** (build tool)
+- **C++ Compiler** (GCC 9+, Clang 12+, or MSVC 2019+)
 
-Godot is not only an engine but an ever-growing community of users and engine
-developers. The main community channels are listed [on the homepage](https://godotengine.org/community).
+### Quick Start
+```bash
+# Clone the repository
+git clone https://github.com/palimpsest-engine/palimpsest.git
+cd palimpsest
 
-The best way to get in touch with the core engine developers is to join the
-[Godot Contributors Chat](https://chat.godotengine.org).
+# Setup build configuration
+python3 palimpsest_build.py --setup
 
-To get started contributing to the project, see the [contributing guide](CONTRIBUTING.md).
-This document also includes guidelines for reporting bugs.
+# Build the engine
+python3 palimpsest_build.py
 
-## Documentation and demos
+# Launch with CRPG profile
+./bin/godot --feature-profile palimpsest_crpg.profile
+```
 
-The official documentation is hosted on [Read the Docs](https://docs.godotengine.org).
-It is maintained by the Godot community in its own [GitHub repository](https://github.com/godotengine/godot-docs).
+### Validation
+```bash
+# Verify installation
+python3 validate_palimpsest.py
+```
 
-The [class reference](https://docs.godotengine.org/en/latest/classes/)
-is also accessible from the Godot editor.
+## Documentation
 
-We also maintain official demos in their own [GitHub repository](https://github.com/godotengine/godot-demo-projects)
-as well as a list of [awesome Godot community resources](https://github.com/godotengine/awesome-godot).
+- **[Engine Documentation](PALIMPSEST_ENGINE_README.md)** - Complete technical reference
+- **[UI System Guide](PALIMPSEST_UI_SYSTEM.md)** - Custom editor interface
+- **[CRPG Profile](palimpsest_crpg.profile)** - Editor feature configuration
+- **[Build Instructions](palimpsest_build.py)** - Compilation guide
 
-There are also a number of other
-[learning resources](https://docs.godotengine.org/en/latest/community/tutorials.html)
-provided by the community, such as text and video tutorials, demos, etc.
-Consult the [community channels](https://godotengine.org/community)
-for more information.
+## Philosophy
 
-[![Code Triagers Badge](https://www.codetriage.com/godotengine/godot/badges/users.svg)](https://www.codetriage.com/godotengine/godot)
-[![Translate on Weblate](https://hosted.weblate.org/widgets/godot-engine/-/godot/svg-badge.svg)](https://hosted.weblate.org/engage/godot-engine/?utm_source=widget)
-[![TODOs](https://badgen.net/https/api.tickgit.com/badgen/github.com/godotengine/godot)](https://www.tickgit.com/browse?repo=github.com/godotengine/godot)
+Palimpsest Engine embodies the concept of a **palimpsest** - a manuscript where earlier writing shows through later text. In our engine:
+
+- **Consciousness** is the earlier writing - persistent mental patterns
+- **Reality** is the later text - the world as perceived and experienced  
+- **Gameplay** emerges from the interaction between hidden psychology and visible events
+
+This creates games where **internal states have external consequences**, making player psychology an integral part of the game world rather than just a narrative device.
+
+## Architecture
+
+### Core Systems
+```
+Palimpsest Engine
+├── Consciousness System      (Mental state management)
+├── Narrative Framework      (Dialogue, quests, choices)
+├── Bureaucratic Mechanics   (Forms, validation, red tape)
+├── Procedural Generation    (WFC with consciousness constraints)
+├── Expressionist Renderer   (Monochrome + selective color)
+└── Specialized Editor       (CRPG-focused development tools)
+```
+
+### Module Structure
+- `modules/palimpsest/` - Core CRPG systems
+- `editor/palimpsest/` - Custom editor tools  
+- `addons/palimpsest_tools/` - Editor plugins
+- `project_templates/` - CRPG project templates
+
+## Community
+
+- **Discord**: [Join our community](https://discord.gg/palimpsest)
+- **GitHub**: [Report issues](https://github.com/palimpsest-engine/palimpsest/issues)
+- **Documentation**: [Read the docs](https://docs.palimpsest.org)
+- **Examples**: [Sample projects](https://github.com/palimpsest-engine/examples)
+
+## License
+
+Palimpsest Engine is distributed under the **MIT license** (same as Godot Engine).
+
+- **Engine Code**: MIT License - use for any purpose including commercial
+- **Logo & Branding**: CC BY 4.0 - attribution required for official branding
+- **Documentation**: CC BY 4.0 - free to use and modify with attribution
+
+See [PALIMPSEST_COPYRIGHT.txt](PALIMPSEST_COPYRIGHT.txt) for complete licensing information.
+
+## Acknowledgments
+
+Palimpsest Engine is built upon the excellent foundation of the **Godot Engine** by Juan Linietsky, Ariel Manzur, and the Godot community. We extend our gratitude to:
+
+- **Godot Engine contributors** - for creating the robust base engine
+- **ZA/UM Studio** - for inspiring consciousness mechanics in Disco Elysium
+- **German Expressionist artists** - for the visual aesthetic inspiration
+- **Interactive fiction community** - for narrative design principles
+
+## Support Development
+
+Palimpsest Engine is **free and open source**. You can support continued development:
+
+- ⭐ **Star this repository**
+- 🐛 **Report bugs and request features**  
+- 🔧 **Contribute code improvements**
+- 📖 **Improve documentation**
+- 💰 **Support via GitHub Sponsors**
+
+---
+
+*"In the palimpsest of consciousness, no thought is ever truly erased - it simply waits beneath the surface, ready to reshape reality when the conditions are right."*

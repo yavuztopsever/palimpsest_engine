@@ -1,0 +1,261 @@
+[gd_scene load_steps=15 format=3]
+
+[sub_resource type="Environment" id="Environment_1"]
+background_mode = 1
+background_color = Color(0.6, 0.6, 0.6, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.8, 0.8, 0.9, 1)
+ambient_light_energy = 0.3
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.7, 0.7, 0.8, 1)
+fog_density = 0.15
+
+[sub_resource type="PackedScene" id="DialogueSystem"]
+[node name="DialogueManager" type="Node"]
+script = preload("res://modules/palimpsest/narrative/dialogue_system/dialogue_manager.gd")
+
+[sub_resource type="PackedScene" id="ConsciousnessField_1"]
+[node name="ConsciousnessField" type="Area3D"]
+script = preload("res://modules/palimpsest/consciousness/reality_distortion/consciousness_field.gd")
+
+[sub_resource type="StandardMaterial3D" id="BureauFloorMaterial"]
+albedo_color = Color(0.4, 0.4, 0.4, 1.0)
+roughness = 0.8
+metallic = 0.1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_floor"]
+size = Vector3(20, 0.2, 20)
+
+[sub_resource type="StandardMaterial3D" id="BureauWallMaterial"]
+albedo_color = Color(0.5, 0.5, 0.5, 1.0)
+roughness = 0.9
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wall"]
+size = Vector3(20, 4, 0.2)
+
+[sub_resource type="PackedScene" id="FormProcessingDesk"]
+[node name="FormDesk" type="StaticBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+
+[node name="BureauInvestigationTemplate" type="Node3D"]
+
+[node name="Environment" type="Node3D" parent="."]
+script = preload("res://addons/palimpsest/environment_controller.gd")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
+environment = SubResource("Environment_1")
+
+[node name="Camera3D" type="Camera3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 0.707, 0.707, 0, -0.707, 0.707, 0, 10, 10)
+projection = 1
+fov = 45.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
+transform = Transform3D(0.5, -0.5, 0.707, 0, 0.707, 0.5, -0.866, -0.25, 0.433, 0, 5, 0)
+light_energy = 0.8
+shadow_enabled = true
+
+[node name="Architecture" type="Node3D" parent="."]
+
+[node name="Floor" type="StaticBody3D" parent="Architecture"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Architecture/Floor"]
+mesh = preload("res://meshes/bureau_floor.tres")
+material_override = SubResource("BureauFloorMaterial")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Architecture/Floor"]
+shape = SubResource("BoxShape3D_floor")
+
+[node name="WallNorth" type="StaticBody3D" parent="Architecture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -10)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Architecture/WallNorth"]
+mesh = preload("res://meshes/bureau_wall.tres")
+material_override = SubResource("BureauWallMaterial")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Architecture/WallNorth"]
+shape = SubResource("BoxShape3D_wall")
+
+[node name="WallSouth" type="StaticBody3D" parent="Architecture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 10)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Architecture/WallSouth"]
+mesh = preload("res://meshes/bureau_wall.tres")
+material_override = SubResource("BureauWallMaterial")
+
+[node name="WallEast" type="StaticBody3D" parent="Architecture"]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 10, 2, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Architecture/WallEast"]
+mesh = preload("res://meshes/bureau_wall.tres")
+material_override = SubResource("BureauWallMaterial")
+
+[node name="WallWest" type="StaticBody3D" parent="Architecture"]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -10, 2, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Architecture/WallWest"]
+mesh = preload("res://meshes/bureau_wall.tres")
+material_override = SubResource("BureauWallMaterial")
+
+[node name="ConsciousnessFields" type="Node3D" parent="."]
+
+[node name="BureaucraticField" type="Area3D" parent="ConsciousnessFields"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = preload("res://modules/palimpsest/consciousness/reality_distortion/consciousness_field.gd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ConsciousnessFields/BureaucraticField"]
+shape = preload("res://shapes/bureau_field_shape.tres")
+
+[node name="DepressionCorner" type="Area3D" parent="ConsciousnessFields"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1, -8)
+script = preload("res://modules/palimpsest/consciousness/reality_distortion/consciousness_field.gd")
+
+[node name="InteractableObjects" type="Node3D" parent="."]
+
+[node name="MainDesk" type="StaticBody3D" parent="InteractableObjects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+script = preload("res://scripts/form_processing_desk.gd")
+
+[node name="FilingCabinets" type="Node3D" parent="InteractableObjects"]
+
+[node name="FilingCabinet1" type="StaticBody3D" parent="InteractableObjects/FilingCabinets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0.8, -8)
+script = preload("res://scripts/filing_cabinet.gd")
+
+[node name="FilingCabinet2" type="StaticBody3D" parent="InteractableObjects/FilingCabinets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0.8, -8)
+script = preload("res://scripts/filing_cabinet.gd")
+
+[node name="StampingStation" type="StaticBody3D" parent="InteractableObjects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.7, 3)
+script = preload("res://scripts/stamping_station.gd")
+
+[node name="NPCs" type="Node3D" parent="."]
+
+[node name="BureauClerk" type="CharacterBody3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -2)
+script = preload("res://scripts/npcs/bureau_clerk.gd")
+
+[node name="DialogueNode" parent="NPCs/BureauClerk" instance=ExtResource("DialogueSystem")]
+dialogue_id = "clerk_intro"
+script = preload("res://modules/palimpsest/narrative/dialogue_system/dialogue_node.gd")
+
+[node name="DepressedWorker" type="CharacterBody3D" parent="NPCs"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 6)
+script = preload("res://scripts/npcs/depressed_worker.gd")
+
+[node name="GameSystems" type="Node3D" parent="."]
+
+[node name="DialogueManager" parent="GameSystems" instance=ExtResource("DialogueSystem")]
+
+[node name="QuestTracker" type="Node" parent="GameSystems"]
+script = preload("res://modules/palimpsest/narrative/quest_system/quest_tracker.gd")
+
+[node name="InventorySystem" type="Node" parent="GameSystems"]
+script = preload("res://modules/palimpsest/rpg_systems/inventory/inventory_container.gd")
+
+[node name="ConsciousnessManager" type="Node" parent="GameSystems"]
+script = preload("res://scripts/consciousness_manager.gd")
+
+[node name="FormProcessor" type="Node" parent="GameSystems"]
+script = preload("res://modules/palimpsest/consciousness/bureaucracy_anchoring/form_processor.gd")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="MainInterface" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+
+[node name="DialogueUI" type="Panel" parent="UI/MainInterface"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -200.0
+visible = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MainInterface/DialogueUI"]
+layout_mode = 1
+anchors_preset = 15
+
+[node name="SpeakerLabel" type="Label" parent="UI/MainInterface/DialogueUI/VBoxContainer"]
+layout_mode = 2
+text = "Bureau Clerk"
+horizontal_alignment = 1
+
+[node name="DialogueLabel" type="RichTextLabel" parent="UI/MainInterface/DialogueUI/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Welcome to Form Processing Station 7-A. Please state your bureaucratic inquiry."
+
+[node name="ResponseContainer" type="VBoxContainer" parent="UI/MainInterface/DialogueUI/VBoxContainer"]
+layout_mode = 2
+
+[node name="InventoryUI" type="Panel" parent="UI/MainInterface"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -300.0
+visible = false
+
+[node name="FormUI" type="Panel" parent="UI/MainInterface"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -150.0
+offset_right = 200.0
+offset_bottom = 150.0
+visible = false
+
+[node name="FormTitle" type="Label" parent="UI/MainInterface/FormUI"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -280.0
+offset_right = 400.0
+offset_bottom = -250.0
+text = "FORM 47-B: REALITY DISTORTION REPORT"
+horizontal_alignment = 1
+
+[node name="ConsciousnessIndicator" type="ProgressBar" parent="UI/MainInterface"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -40.0
+offset_right = 320.0
+offset_bottom = -20.0
+value = 50.0
+
+[node name="ConsciousnessLabel" type="Label" parent="UI/MainInterface/ConsciousnessIndicator"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -10.0
+offset_right = 75.0
+offset_bottom = 10.0
+text = "Reality Stability: 50%"
+horizontal_alignment = 1
+
+[node name="PostProcessing" type="Node3D" parent="."]
+
+[node name="PaletteEnforcer" type="Node" parent="PostProcessing"]
+script = preload("res://modules/palimpsest/renderer/palette_enforcer/palette_enforcer.gd")
+
+[node name="ExpressionistRenderer" type="CanvasLayer" parent="PostProcessing"]
+[node name="ColorRect" type="ColorRect" parent="PostProcessing/ExpressionistRenderer"]
+material = preload("res://shaders/expressionist_post_process.tres")
+layout_mode = 3
+anchors_preset = 15

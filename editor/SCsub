@@ -99,6 +99,7 @@ if env.editor_build:
     SConscript("icons/SCsub")
     SConscript("inspector/SCsub")
     SConscript("import/SCsub")
+    SConscript("palimpsest/SCsub")  # Palimpsest CRPG UI extensions
     SConscript("plugins/SCsub")
     SConscript("project_manager/SCsub")
     SConscript("project_upgrade/SCsub")

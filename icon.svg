@@ -1,1 +1,69 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024"><g fill="#fff"><path d="M105 673v33q407 354 814 0v-33z"/><path fill="#478cbf" d="m105 673 152 14q12 1 15 14l4 67 132 10 8-61q2-11 15-15h162q13 4 15 15l8 61 132-10 4-67q3-13 15-14l152-14V427q30-39 56-81-35-59-83-108-43 20-82 47-40-37-88-64 7-51 8-102-59-28-123-42-26 43-46 89-49-7-98 0-20-46-46-89-64 14-123 42 1 51 8 102-48 27-88 64-39-27-82-47-48 49-83 108 26 42 56 81zm0 33v39c0 276 813 276 814 0v-39l-134 12-5 69q-2 10-14 13l-162 11q-12 0-16-11l-10-65H446l-10 65q-4 11-16 11l-162-11q-12-3-14-13l-5-69z"/><path d="M483 600c0 34 58 34 58 0v-86c0-34-58-34-58 0z"/><circle cx="725" cy="526" r="90"/><circle cx="299" cy="526" r="90"/></g><g fill="#414042"><circle cx="307" cy="532" r="60"/><circle cx="717" cy="532" r="60"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!-- Palimpsest Engine Logo - German Expressionist Style -->
+  <defs>
+    <style>
+      .bg { fill: #1a1a1a; }
+      .paper { fill: #e8d7b8; stroke: #000; stroke-width: 4; }
+      .text { fill: #2a2a2a; font-family: serif; font-weight: bold; }
+      .rays { stroke: #e8d7b8; stroke-width: 8; stroke-linecap: round; }
+      .scratches { stroke: #2a2a2a; stroke-width: 3; stroke-linecap: round; fill: none; }
+    </style>
+  </defs>
+  
+  <!-- Dark background -->
+  <rect class="bg" width="1024" height="1024"/>
+  
+  <!-- Radiating energy lines (8 directions) -->
+  <g class="rays">
+    <line x1="512" y1="100" x2="512" y2="200"/>
+    <line x1="724" y1="150" x2="674" y2="200"/>
+    <line x1="874" y1="300" x2="824" y2="350"/>
+    <line x1="924" y1="512" x2="824" y2="512"/>
+    <line x1="874" y1="724" x2="824" y2="674"/>
+    <line x1="724" y1="874" x2="674" y2="824"/>
+    <line x1="512" y1="924" x2="512" y2="824"/>
+    <line x1="300" y1="874" x2="350" y2="824"/>
+    <line x1="150" y1="724" x2="200" y2="674"/>
+    <line x1="100" y1="512" x2="200" y2="512"/>
+    <line x1="150" y1="300" x2="200" y2="350"/>
+    <line x1="300" y1="150" x2="350" y2="200"/>
+  </g>
+  
+  <!-- Central manuscript/document square -->
+  <rect class="paper" x="200" y="200" width="624" height="624" rx="20"/>
+  
+  <!-- Crumpled paper texture with scratchy lines -->
+  <g class="scratches">
+    <!-- Central swirl/consciousness symbol -->
+    <path d="M 350 400 Q 500 300 650 400 Q 500 500 350 400"/>
+    <path d="M 400 350 Q 512 400 624 350"/>
+    <path d="M 400 650 Q 512 600 624 650"/>
+    
+    <!-- Random scratches for texture -->
+    <line x1="250" y1="280" x2="300" y2="320"/>
+    <line x1="280" y1="350" x2="250" y2="400"/>
+    <line x1="720" y1="300" x2="750" y2="280"/>
+    <line x1="750" y1="400" x2="720" y2="450"/>
+    <line x1="300" y1="700" x2="350" y2="750"/>
+    <line x1="700" y1="720" x2="750" y2="700"/>
+    
+    <!-- Document fold lines -->
+    <line x1="220" y1="220" x2="804" y2="804"/>
+    <line x1="804" y1="220" x2="220" y2="804"/>
+  </g>
+  
+  <!-- PALIMPSEST text -->
+  <text class="text" x="512" y="720" text-anchor="middle" font-size="80">PALIMPSEST</text>
+  
+  <!-- Additional energy bursts -->
+  <g class="rays" opacity="0.6">
+    <line x1="450" y1="120" x2="470" y2="180"/>
+    <line x1="574" y1="120" x2="554" y2="180"/>
+    <line x1="854" y1="450" x2="794" y2="470"/>
+    <line x1="854" y1="574" x2="794" y2="554"/>
+    <line x1="574" y1="904" x2="554" y2="844"/>
+    <line x1="450" y1="904" x2="470" y2="844"/>
+    <line x1="170" y1="574" x2="230" y2="554"/>
+    <line x1="170" y1="450" x2="230" y2="470"/>
+  </g>
+</svg>
