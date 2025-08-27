@@ -6,11 +6,11 @@
   </a>
 </p>
 
-## Consciousness-Driven CRPG Engine
+## Private Consciousness-Driven CRPG Engine Fork
 
-**[Palimpsest Engine](https://palimpsest.org) is a specialized CRPG development platform built for creating Disco Elysium-style narrative games.** Based on the proven Godot Engine foundation, Palimpsest adds consciousness mechanics, bureaucratic systems, and German Expressionist aesthetics to create immersive psychological RPGs where thoughts reshape reality.
+**[Palimpsest Engine](https://github.com/yavuztopsever/palimpsest_engine) is a specialized CRPG development platform built for creating Disco Elysium-style narrative games.** This is a private fork of the Godot Engine, customized with consciousness mechanics, bureaucratic systems, and German Expressionist aesthetics to create immersive psychological RPGs where thoughts reshape reality.
 
-Palimpsest transforms traditional game development by making **mental states physically affect the game world** through consciousness fields that distort architecture, alter NPC behavior, and influence procedural generation.
+This private fork transforms traditional game development by making **mental states physically affect the game world** through consciousness fields that distort architecture, alter NPC behavior, and influence procedural generation.
 
 ## Key Features
 
@@ -59,9 +59,9 @@ Palimpsest transforms traditional game development by making **mental states phy
 
 ### Quick Start
 ```bash
-# Clone the repository
-git clone https://github.com/palimpsest-engine/palimpsest.git
-cd palimpsest
+# Clone the repository (private fork)
+git clone https://github.com/yavuztopsever/palimpsest_engine.git
+cd palimpsest_engine
 
 # Setup build configuration
 python3 palimpsest_build.py --setup
@@ -96,6 +96,28 @@ Palimpsest Engine embodies the concept of a **palimpsest** - a manuscript where 
 
 This creates games where **internal states have external consequences**, making player psychology an integral part of the game world rather than just a narrative device.
 
+## Project Goals & Status
+
+### 🎯 **Current Objectives**
+- **Experimental Development**: Testing consciousness mechanics in practice
+- **CRPG Framework**: Building reusable systems for narrative-driven games
+- **Technical Exploration**: Pushing boundaries of psychological game design
+- **Private R&D**: Developing custom tools for personal game projects
+
+### 📊 **Development Status**
+- ✅ **Godot Engine Fork**: Successfully forked and customized
+- 🔄 **Consciousness System**: Core architecture implemented
+- 🏗️ **Editor Extensions**: Custom tools being developed
+- 📝 **Documentation**: Technical guides in progress
+- 🎮 **Prototype Phase**: Testing core mechanics
+
+### 🚀 **Next Steps**
+- Implement consciousness field interactions
+- Develop procedural generation with psychological constraints
+- Create specialized CRPG node types
+- Build custom editor workspaces
+- Test narrative integration systems
+
 ## Architecture
 
 ### Core Systems
@@ -115,12 +137,13 @@ Palimpsest Engine
 - `addons/palimpsest_tools/` - Editor plugins
 - `project_templates/` - CRPG project templates
 
-## Community
+## Development & Support
 
-- **Discord**: [Join our community](https://discord.gg/palimpsest)
-- **GitHub**: [Report issues](https://github.com/palimpsest-engine/palimpsest/issues)
-- **Documentation**: [Read the docs](https://docs.palimpsest.org)
-- **Examples**: [Sample projects](https://github.com/palimpsest-engine/examples)
+Since this is a **private repository**, development and support are handled directly:
+
+- **GitHub**: [Repository Issues](https://github.com/yavuztopsever/palimpsest_engine/issues)
+- **Documentation**: See [PALIMPSEST_ENGINE_README.md](PALIMPSEST_ENGINE_README.md) for technical details
+- **Private Development**: This fork is for personal use and experimentation
 
 ## License
 
@@ -141,15 +164,14 @@ Palimpsest Engine is built upon the excellent foundation of the **Godot Engine**
 - **German Expressionist artists** - for the visual aesthetic inspiration
 - **Interactive fiction community** - for narrative design principles
 
-## Support Development
+## Private Development Notes
 
-Palimpsest Engine is **free and open source**. You can support continued development:
+This is a **private fork** for experimental CRPG development:
 
-- ⭐ **Star this repository**
-- 🐛 **Report bugs and request features**  
-- 🔧 **Contribute code improvements**
-- 📖 **Improve documentation**
-- 💰 **Support via GitHub Sponsors**
+- 🔒 **Private Repository**: Not available for public contribution
+- 🧪 **Experimental**: Testing consciousness mechanics and CRPG systems
+- 📝 **Personal Project**: Custom modifications for specific game development goals
+- 🔄 **Upstream Sync**: Can pull updates from original Godot Engine when needed
 
 ---
 
